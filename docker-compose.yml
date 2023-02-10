@@ -15,7 +15,7 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
-    mem_limit: 6g
+    mem_limit: 2g
     
 
   kibana:
@@ -29,6 +29,8 @@ services:
       - elasticsearch
     ports:
       - 5601:5601
+    mem_limit: 2g
+
 
   logstash:
     container_name: logstash_compose
@@ -45,6 +47,8 @@ services:
       - "host.docker.internal:host-gateway"
     networks:
       - es-net
+    mem_limit: 2g
+
 
 networks:
   es-net:
